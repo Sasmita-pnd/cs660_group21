@@ -19,7 +19,7 @@
 
 <p>
 The AQI is calculated based on the average concentration of a particular pollutant measured over a standard time interval (24 hours for most pollutants, 8 hours for carbon monoxide and ozone).<br> For example, the AQI for PM2.5 is based on 24-hour average concentration 
-<img src="C:\Users\sas\Desktop\thequint-fit_2019-11_53ec129b-dcb9-4f51-abb1-e474883cb277_Capture.jpg"  width="300" height="500" Align=right>
+<img src="thequint-fit_2019-11_53ec129b-dcb9-4f51-abb1-e474883cb277_Capture.jpg"  width="300" height="500" Align=right>
 
 </p>
 
@@ -147,12 +147,12 @@ The  Pollutant data was available from 2018 onwards and  downloaded from cpcb we
 The meteorological variables were webscrapped  from https://en.tutiempo.net/
 To collect the meteorological variables data Html file of website was webscrapped .
 Then Using beautiful soup html data was written into a csv Format<br>
-<img src="C:\Users\sas\Desktop\python\csv.png"Align=center><br>
+<img src="csv.png"Align=center><br>
 </p>
 <p>
 Data  was cleaned (removing null values, removing empty rows)
 And  AQI data was combined to form final dataset.<br><br>
-<img src="C:\Users\sas\Desktop\python\fcsv.png"Align=center><br>
+<img src="fcsv.png"Align=center><br>
 
 
 
@@ -162,19 +162,19 @@ And  AQI data was combined to form final dataset.<br><br>
 <h3>Visualising Data</h3>
 <p>
 Dataset was first imported , and checked for null values in Dataframe, and remove the null values.<br>
-<img src="C:\Users\sas\Desktop\python\visualise.png"Align=center>
-<img src="C:\Users\sas\Desktop\python\nulld.png"Align=center>
-<img src="C:\Users\sas\Desktop\python\visualise null.png"Align=center>
+<img src="visualise.png"Align=center>
+<img src="nulld.png"Align=center>
+<img src="visualise null.png"Align=center>
 </p>
 <p>
 Divide dataset into dependent and independent features<br>
 
-<img src="C:\Users\sas\Desktop\python\visualise divide data.png"Align=center>
+<img src="visualise divide data.png"Align=center>
 </p>
 <p>
 Pairwise relationships in the dataset were visualised . The pairplot function was used to creates a grid of Axes such that each variable in data will by shared in the y-axis across a single row and in the x-axis across a single column. 
 And pairwise correlation of all columns in the dataframe found using  df.corr()<br>
-<img src="C:\Users\sas\Desktop\python\pairplot.png"Align=center>
+<img src="pairplot.png"Align=center>
 
 
 </p>
@@ -184,9 +184,9 @@ And pairwise correlation of all columns in the dataframe found using  df.corr()<
 Feature importance scores can be calculated for problems that involve predicting a numerical value, called regression, and those problems that involve predicting a class label, called classification.
  The higher the score more important or relevant is the feature towards your output variable.
 Feature importance is an inbuilt class that comes with Tree Based Regressor I used Extra Tree Regressor for extracting required features for the dataset.<br>
-<img src="C:\Users\sas\Desktop\python\Feature Sel.png"Align=center><br>
-<img src="C:\Users\sas\Desktop\python\Feature.png"Align=center><br>
-<img src="C:\Users\sas\Desktop\python\featureimp.png"Align=center>
+<img src="Feature Sel.png"Align=center><br>
+<img src="Feature.png"Align=center><br>
+<img src="featureimp.png"Align=center>
 
  </p>
 <p>
@@ -198,17 +198,17 @@ Feature importance is an inbuilt class that comes with Tree Based Regressor I us
 </p>
 <p>
 Build the  Linear regression model<br>
-<img src="C:\Users\sas\Desktop\python\lin model.png"Align=center>
+<img src="lin model.png"Align=center>
 
 </p>
 <p>
 Predict  Dependent variables(2.5 AQI)<br>
-<img src="C:\Users\sas\Desktop\python\lin predict y.png"Align=center>
+<img src="lin predict y.png"Align=center>
 </p>
 <p>
 Evaluate  model by finding R-Squared value  is also known as the Coefficient of Determination. The value of R-Squared ranges from 0 to 1.The higher the R-Squared value of a model, the better is the model fitting on the data. 
 However, if the R-Squared value is very close to 1, then there is a possibility of model overfitting, which should be avoided. A good model should have an R-Squared above 0.8.<br>
-<img src="C:\Users\sas\Desktop\python\coef r2.png"Align=center><br>
+<img src="coef r2.png"Align=center><br>
 We get R-Squared value close to 7
 
 
@@ -222,7 +222,7 @@ Build the  Linear regression model
      We generally use a scorer object with the scoring parameter in the cross_val_score function. All scorer objects follow the convention that higher return values are better than lower return values.
 Thus metrics which measure the distance between the model and the data, like metrics.mean_squared_error, are available as neg_mean_squared_error which return the negated value of the metric.
  here we have mse=-2760.392573715005<br>
- <img src="C:\Users\sas\Desktop\python\ridgel.png"Align=center>
+ <img src="ridgel.png"Align=center>
 </p>
 <p>
 Try  if we could make our model better by hyper tuning it using Ridge Regression.
@@ -230,9 +230,9 @@ in Ridege Regression we have taken the alpha(λ-parameter) value as a bunch of p
 Here also the value for the scoring parameter will be neg_mean_squared_error which measures the  distance between 
       the model and the  data.
    The formula for Ridge Regression is:<br>
-   <img src="C:\Users\sas\Desktop\python\ridge formula.png"Align=center><br>
-   <img src="C:\Users\sas\Desktop\python\ridge.png"Align=center><br>
-   <img src="C:\Users\sas\Desktop\python\Ridge param.png"Align=center><br>
+   <img src="ridge formula.png"Align=center><br>
+   <img src="ridge.png"Align=center><br>
+   <img src="Ridge param.png"Align=center><br>
 
 
 </p>
