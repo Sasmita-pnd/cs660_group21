@@ -239,6 +239,272 @@ Here also the value for the scoring parameter will be neg_mean_squared_error whi
 
 <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQyoW5bFbPTNEoxzNOPXs9Y-unfgQL7nB-3HvkScimu6sJlj5BDWN2SlAgDb0iiMQ/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 <hr/>
+	
+	
+<hr>
+
+<h3>Lasso Regression</h3>
+<p>
+Steps
+</p>
+<p>Build the Linear regression model.
+</p>
+<p>We use a scorer object with the scoring parameter in the cross_val_score function. 
+All scorer objects follow the convention that higher return values are better than lower return values.
+ Thus metrics which measure the distance between the model and the data, like metrics.mean_squared_error, are available as neg_mean_squared_error which return the negated value of the metric. 
+Here we have mse=-2760.392573715005
+</p>
+<p> We try to make our model better by hyper tuning it using Lasso Regression.
+ in Ridege Regression we have taken the alpha(λ-parameter) value as a bunch of possible random values.
+ We are doing GridSearch to find the best parameters which will work for the Lasso Regressor.
+ Here also the value for the scoring parameter will be neg_mean_squared_error which measures the distance between the model and the data
+</p>
+<p>
+After hypertuning we get score as -2760.3925738642843.
+</p>
+<p>Evaluation Metrices<br>
+Mean Absolute Error: 34.31529029728029<br>
+Mean Square Error: 2203.686005695834<br>
+Root Mean Square Error: 46.94343410633519<br>
+</p>
+<h3>K-Nearest Neighbour</h3>
+<p>
+Build the K-Nearest Neighbour model<br>
+
+
+</p>
+<p>
+We Evaluate  model by finding R-Squared value  i.e Coefficient of Determination. <br>
+We get R-Squared value for training  Data=1.0<br>
+We get R-Squared value for testing  Data=0.3820085833313066<br>
+</p>
+<p>Evaluation Metrices<br>
+Mean Absolute Error: 36.720977777777776<br>
+Mean Square Error: 3100.9031288126985<br>
+Root Mean Square Error: 55.68575337384508<br>
+</p>
+
+
+<h3>Random Forest Regressor</h3>
+<p>
+Random Forest Regression is a supervised learning algorithm that uses ensemble learning method for<br> 
+regression. Ensemble learning method is a technique that combines predictions from multiple machine<br> 
+learning algorithms to make a more accurate prediction than a single model.It is a meta estimator that<br> 
+fits a number of classifying decision trees on various sub-samples of the dataset and uses averaging to<br>
+ improve the predictive accuracy and control over-fitting.<br>
+</p>
+<p>We Evaluate  model by finding R-Squared value  i.e Coefficient of Determination.<br>
+We get R-Squared value for training  Data=0.9729739075719985<br>
+We get R-Squared value for testing  Data=0.7540440934165676<br>
+</p>
+<p>We get mean cross valdation score =0.6815096950121835<br>
+We also perform a Randomized Search and get mean score =-1888.5427588856328
+</p>
+<p>Evaluation Metrices<br>
+Mean Absolute Error: 19.898582014790176<br>
+Mean Square Error: 835.6375956118613<br>
+Root Mean Square Error: 28.907396901344494<br>
+</p>
+
+<h3>XG Boost Regressor</h3>
+<p>XGBoost stands for “Extreme Gradient Boosting”. XGBoost is an optimized distributed gradient boosting<br>
+ library designed to be highly efficient, flexible and portable. It implements Machine Learning algorithms<br> 
+ under the Gradient Boosting framework.<br>
+ It provides a parallel tree boosting to solve many data science problems in a fast and accurate way.<br>
+ 
+</p>
+<p>We Evaluate  model by finding R-Squared value  i.e Coefficient of Determination.<br>
+We get R-Squared value for training  Data=0.9995968643939962<br>
+We get R-Squared value for testing  Data=0.7247784976953502<br>
+</p>
+<p>We get mean cross valdation score =0.6548830137132338<br>
+We also perform a Randomized Search and get mean score =-1952.6997222489085
+</p>
+<p>Evaluation Metrices<br>
+Mean Absolute Error: 7.676428318689741<br>
+Mean Square Error: 133.2822014854206<br>
+Root Mean Square Error:  11.544791097521886<br>
+</p>
+
+<hr>
+<h3>Improvements</h3>
+<p>From   the  Final dataset A feature was completely deleted as not enough Records for the feature were available .
+<br>
+ For improving the model I calculated the average of the available records of the deleted feature and used function fillna() to fill all empty cells of that feature with the calculated  average value.
+<br>
+ 
+</p>
+<p>When I Re Run all algorithms with the new dataset and could find minor improvements.
+<br>
+
+<h3>Linear regression</h3>
+<p>R-Squared value</p>
+<p>Before Modifications</p>
+<p>We get R-Squared value for training  Data=0.6819162365647814
+<br>
+We get R-Squared value for testing  Data=0.6938412145242896
+<br></p>
+
+<p>After Modifications
+</p>
+<p>We get R-Squared value for training  Data=0.6819215499319956
+
+<br>
+We get R-Squared value for testing  Data=0.6939168889550285
+
+<br>
+</p>
+
+<p>Evaluation Metrices Before Modifications<br>
+Mean Absolute Error: 34.42900945054323
+<br>
+Mean Square Error: 2244.444176498912
+<br>
+Root Mean Square Error:  47.37556518395228
+<br>
+</p>
+<p>Evaluation Metrices After Modifications<br>
+Mean Absolute Error: 34.42704370859507
+<br>
+Mean Square Error: 2243.8894087005046
+<br>
+Root Mean Square Error:  47.36970982284465
+<br>
+</p>
+
+<h3>Ridge Regression</h3>
+<p>Mean Cross validation Score Before Modifications =-2760.392573715005
+
+
+</p>
+<p>Mean Cross validation Score After Modifications =-2768.2974430691675
+
+</p>
+<p>
+After Hypertuning</p>
+<p>Mean Cross validation Score Before Modifications =-2760.3925737150103
+
+
+</p>
+<p>Mean Cross validation Score After Modifications =-2768.297443069173
+
+</p>
+<p>Evaluation Metrices Before Modifications<br>
+Mean Absolute Error: 34.31529029706646
+<br>
+Mean Square Error: 2203.6860057132244
+<br>
+Root Mean Square Error:  46.94343410652042
+<br>
+</p>
+<p>Evaluation Metrices After Modifications<br>
+Mean Absolute Error: 34.307877465585314
+<br>
+Mean Square Error: 2202.34877434467
+<br>
+Root Mean Square Error:  46.929188937639545
+
+<br>
+</p>
+
+
+<h3>Lasso Regression</h3>
+<p>Mean Cross validation Score Before Modifications =-2760.392573715005
+
+
+</p>
+<p>Mean Cross validation Score After Modifications =-2760.392573715005
+
+
+</p>
+<p>
+After Hypertuning</p>
+<p>Mean Cross validation Score Before Modifications =2760.3925738642843
+
+
+
+</p>
+<p>Mean Cross validation Score After Modifications =-2768.2974432297224
+
+
+</p>
+<p>Evaluation Metrices Before Modifications<br>
+Mean Absolute Error: 34.31529029728029
+<br>
+Mean Square Error:2203.686005695834
+<br>
+Root Mean Square Error: 46.94343410633519
+
+<br>
+</p>
+<p>Evaluation Metrices After Modifications<br>
+Mean Absolute Error: 34.30787746579477
+<br>
+Mean Square Error: 2202.348774324336
+<br>
+Root Mean Square Error:  46.9291889374229
+
+
+<br>
+</p>
+
+<h3>K-Nearest Neighbour</h3>
+<p>R-Squared value</p>
+<p>Before Modifications</p>
+<p>We get R-Squared value for training  Data=1.0
+<br>
+We get R-Squared value for testing  Data=0.3820085833313066
+
+<br></p>
+
+<p>After Modifications
+</p>
+<p>We get R-Squared value for training  Data=1.0
+
+<br>
+We get R-Squared value for testing  Data=0.39331751605005005
+
+<br>
+</p>
+<p>
+After Hypertuning</p>
+<p>Mean Cross validation Score Before Modifications =0.21544843109832443
+
+</p>
+<p>Mean Cross validation Score After Modifications =0.21707626193332777
+
+</p>
+<p>Evaluation Metrices Before Modifications<br>
+Mean Absolute Error: 36.720977777777776
+
+<br>
+Mean Square Error:3100.9031288126985
+<br>
+Root Mean Square Error: 55.68575337384508
+
+<br>
+</p>
+<p>Evaluation Metrices After Modifications<br>
+Mean Absolute Error: 36.69868571428571
+<br>
+Mean Square Error:3084.7406758730162
+<br>
+Root Mean Square Error: 55.540441804805766
+
+
+
+<br>
+</p>
+
+
+
+
+<h3>Results</h3>
+<p>After trying all these  Supervised algorithms we can say that Xg Boost and  Random Forest Regressor  
+give the  best performance.</p>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ99_GmA7olidO9nzxcRXrjc-L1oMorgCvSl-wMR5AXVeeV8FA2DzAP-vpqyweDjpDCgAF1Bw5APpBH/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+<hr>	
+
 </BLOCKQUOTE>
 </body>
 </html>
